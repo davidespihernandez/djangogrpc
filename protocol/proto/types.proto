@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package ocpi;
+package cpsp;
 
 import "google/protobuf/timestamp.proto";
 

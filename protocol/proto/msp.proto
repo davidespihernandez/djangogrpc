@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package cpsp;
+
+import "types.proto";
+
+service Tokens {
+  rpc GetTokenList(TokenListRequest) returns (stream Token) {}
+  rpc GetToken(TokenDetailRequest) returns (Token) {}
+  rpc CreateToken(TokenCreationRequest) returns (Token) {}
+}
+
+message TokenDetailRequest {
+  int32 id = 1;
+}
+
+message TokenListRequest {
+  int32 offset = 1;
+  int32 num_items = 2;
+}
+
+message TokenCreationRequest {
+    string uid = 1;
+    string name = 2;
+}

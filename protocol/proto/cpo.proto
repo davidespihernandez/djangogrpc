@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package cpsp;
+
+import "types.proto";
+
+service Locations {
+  rpc GetLocationList(LocationListRequest) returns (stream Location) {}
+  rpc GetLocation(LocationDetailRequest) returns (Location) {}
+  rpc CreateLocation(LocationCreationRequest) returns (Location) {}
+}
+
+message LocationDetailRequest {
+  int32 id = 1;
+}
+
+message LocationListRequest {
+  int32 offset = 1;
+  int32 num_items = 2;
+}
+
+message LocationCreationRequest {
+    string uid = 1;
+    string name = 2;
+}
