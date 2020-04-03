@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package ocpi;
+
+import "google/protobuf/timestamp.proto";
+
+message Token {
+    int32 id = 1;
+    string uid = 2;
+    string name = 3;
+    google.protobuf.Timestamp date_created = 4;
+}
+
+message Location {
+    int32 id = 1;
+    string uid = 2;
+    string name = 3;
+    enum Status {
+        AVAILABLE = 0;
+        IN_USE = 1;
+        RESERVED = 2;
+        UNAVAILABLE = 3;
+        UNKNOWN = 4;
+    }
+    Status status = 4;
+    google.protobuf.Timestamp date_created = 5;
+}
