@@ -20,6 +20,8 @@ message LocationListRequest {
 }
 
 message LocationCreationRequest {
-    string uid = 1;
-    string name = 2;
+    string name = 1;
+    string address = 2;
+    double lon = 3;
+    double lat = 4;
 }

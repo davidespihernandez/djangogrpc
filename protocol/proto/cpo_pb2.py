@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='cpsp',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\tcpo.proto\x12\x04\x63psp\x1a\x0btypes.proto\"#\n\x15LocationDetailRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"8\n\x13LocationListRequest\x12\x0e\n\x06offset\x18\x01 \x01(\x05\x12\x11\n\tnum_items\x18\x02 \x01(\x05\"4\n\x17LocationCreationRequest\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t2\xce\x01\n\tLocations\x12@\n\x0fGetLocationList\x12\x19.cpsp.LocationListRequest\x1a\x0e.cpsp.Location\"\x00\x30\x01\x12<\n\x0bGetLocation\x12\x1b.cpsp.LocationDetailRequest\x1a\x0e.cpsp.Location\"\x00\x12\x41\n\x0e\x43reateLocation\x12\x1d.cpsp.LocationCreationRequest\x1a\x0e.cpsp.Location\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\tcpo.proto\x12\x04\x63psp\x1a\x0btypes.proto\"#\n\x15LocationDetailRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"8\n\x13LocationListRequest\x12\x0e\n\x06offset\x18\x01 \x01(\x05\x12\x11\n\tnum_items\x18\x02 \x01(\x05\"R\n\x17LocationCreationRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12\x0b\n\x03lon\x18\x03 \x01(\x01\x12\x0b\n\x03lat\x18\x04 \x01(\x01\x32\xce\x01\n\tLocations\x12@\n\x0fGetLocationList\x12\x19.cpsp.LocationListRequest\x1a\x0e.cpsp.Location\"\x00\x30\x01\x12<\n\x0bGetLocation\x12\x1b.cpsp.LocationDetailRequest\x1a\x0e.cpsp.Location\"\x00\x12\x41\n\x0e\x43reateLocation\x12\x1d.cpsp.LocationCreationRequest\x1a\x0e.cpsp.Location\"\x00\x62\x06proto3'
   ,
   dependencies=[types__pb2.DESCRIPTOR,])
 
@@ -103,16 +103,30 @@ _LOCATIONCREATIONREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='uid', full_name='cpsp.LocationCreationRequest.uid', index=0,
+      name='name', full_name='cpsp.LocationCreationRequest.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='name', full_name='cpsp.LocationCreationRequest.name', index=1,
+      name='address', full_name='cpsp.LocationCreationRequest.address', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='lon', full_name='cpsp.LocationCreationRequest.lon', index=2,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='lat', full_name='cpsp.LocationCreationRequest.lat', index=3,
+      number=4, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -129,7 +143,7 @@ _LOCATIONCREATIONREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=127,
-  serialized_end=179,
+  serialized_end=209,
 )
 
 DESCRIPTOR.message_types_by_name['LocationDetailRequest'] = _LOCATIONDETAILREQUEST
@@ -166,8 +180,8 @@ _LOCATIONS = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=182,
-  serialized_end=388,
+  serialized_start=212,
+  serialized_end=418,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetLocationList',
