@@ -13,8 +13,10 @@ message Token {
 
 message Location {
     int32 id = 1;
-    string uid = 2;
-    string name = 3;
+    string name = 2;
+    string address = 3;
+    double lon = 4;
+    double lat = 5;
     enum Status {
         AVAILABLE = 0;
         IN_USE = 1;
@@ -22,6 +24,6 @@ message Location {
         UNAVAILABLE = 3;
         UNKNOWN = 4;
     }
-    Status status = 4;
-    google.protobuf.Timestamp date_created = 5;
+    Status status = 6;
+    google.protobuf.Timestamp date_created = 7;
 }

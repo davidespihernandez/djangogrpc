@@ -16,10 +16,10 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='types.proto',
-  package='ocpi',
+  package='cpsp',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\x0btypes.proto\x12\x04ocpi\x1a\x1fgoogle/protobuf/timestamp.proto\"`\n\x05Token\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0b\n\x03uid\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x30\n\x0c\x64\x61te_created\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xdb\x01\n\x08Location\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0b\n\x03uid\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12%\n\x06status\x18\x04 \x01(\x0e\x32\x15.ocpi.Location.Status\x12\x30\n\x0c\x64\x61te_created\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"O\n\x06Status\x12\r\n\tAVAILABLE\x10\x00\x12\n\n\x06IN_USE\x10\x01\x12\x0c\n\x08RESERVED\x10\x02\x12\x0f\n\x0bUNAVAILABLE\x10\x03\x12\x0b\n\x07UNKNOWN\x10\x04\x62\x06proto3'
+  serialized_pb=b'\n\x0btypes.proto\x12\x04\x63psp\x1a\x1fgoogle/protobuf/timestamp.proto\"`\n\x05Token\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0b\n\x03uid\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x30\n\x0c\x64\x61te_created\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xf9\x01\n\x08Location\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\x12\x0b\n\x03lon\x18\x04 \x01(\x01\x12\x0b\n\x03lat\x18\x05 \x01(\x01\x12%\n\x06status\x18\x06 \x01(\x0e\x32\x15.cpsp.Location.Status\x12\x30\n\x0c\x64\x61te_created\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"O\n\x06Status\x12\r\n\tAVAILABLE\x10\x00\x12\n\n\x06IN_USE\x10\x01\x12\x0c\n\x08RESERVED\x10\x02\x12\x0f\n\x0bUNAVAILABLE\x10\x03\x12\x0b\n\x07UNKNOWN\x10\x04\x62\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -27,7 +27,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _LOCATION_STATUS = _descriptor.EnumDescriptor(
   name='Status',
-  full_name='ocpi.Location.Status',
+  full_name='cpsp.Location.Status',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -54,42 +54,42 @@ _LOCATION_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=293,
-  serialized_end=372,
+  serialized_start=323,
+  serialized_end=402,
 )
 _sym_db.RegisterEnumDescriptor(_LOCATION_STATUS)
 
 
 _TOKEN = _descriptor.Descriptor(
   name='Token',
-  full_name='ocpi.Token',
+  full_name='cpsp.Token',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='ocpi.Token.id', index=0,
+      name='id', full_name='cpsp.Token.id', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='uid', full_name='ocpi.Token.uid', index=1,
+      name='uid', full_name='cpsp.Token.uid', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='name', full_name='ocpi.Token.name', index=2,
+      name='name', full_name='cpsp.Token.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='date_created', full_name='ocpi.Token.date_created', index=3,
+      name='date_created', full_name='cpsp.Token.date_created', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -114,42 +114,56 @@ _TOKEN = _descriptor.Descriptor(
 
 _LOCATION = _descriptor.Descriptor(
   name='Location',
-  full_name='ocpi.Location',
+  full_name='cpsp.Location',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='ocpi.Location.id', index=0,
+      name='id', full_name='cpsp.Location.id', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='uid', full_name='ocpi.Location.uid', index=1,
+      name='name', full_name='cpsp.Location.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='name', full_name='ocpi.Location.name', index=2,
+      name='address', full_name='cpsp.Location.address', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='status', full_name='ocpi.Location.status', index=3,
-      number=4, type=14, cpp_type=8, label=1,
+      name='lon', full_name='cpsp.Location.lon', index=3,
+      number=4, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='lat', full_name='cpsp.Location.lat', index=4,
+      number=5, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='cpsp.Location.status', index=5,
+      number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='date_created', full_name='ocpi.Location.date_created', index=4,
-      number=5, type=11, cpp_type=10, label=1,
+      name='date_created', full_name='cpsp.Location.date_created', index=6,
+      number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -168,7 +182,7 @@ _LOCATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=153,
-  serialized_end=372,
+  serialized_end=402,
 )
 
 _TOKEN.fields_by_name['date_created'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -182,14 +196,14 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Token = _reflection.GeneratedProtocolMessageType('Token', (_message.Message,), {
   'DESCRIPTOR' : _TOKEN,
   '__module__' : 'types_pb2'
-  # @@protoc_insertion_point(class_scope:ocpi.Token)
+  # @@protoc_insertion_point(class_scope:cpsp.Token)
   })
 _sym_db.RegisterMessage(Token)
 
 Location = _reflection.GeneratedProtocolMessageType('Location', (_message.Message,), {
   'DESCRIPTOR' : _LOCATION,
   '__module__' : 'types_pb2'
-  # @@protoc_insertion_point(class_scope:ocpi.Location)
+  # @@protoc_insertion_point(class_scope:cpsp.Location)
   })
 _sym_db.RegisterMessage(Location)
 
